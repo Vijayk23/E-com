@@ -1,0 +1,45 @@
+.footer {
+  background-color: $white;
+  padding: 48px 48px 0;
+  border-top: 1px solid #d3d3d3;
+  .footer-downloadapp {
+    padding: 20px;
+    font-family: $font-thin;
+    font-size: $font-xs;
+  }
+  .app-store {
+    img {
+      height: 40px;
+      width: 150px;
+      border: none;
+    }
+  }
+  .card-icon {
+    padding: 20px;
+    img {
+      width: 39px;
+      height: 20px;
+      margin-right: 4px;
+    }
+  }
+  .footer-list {
+    li {
+      margin-bottom: 10px;
+      font-family: $font-bold;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .copyrights {
+    margin-top: 52px;
+    text-align: center;
+    line-height: 19px;
+    border-top: 0.5px solid #d3d3d3;
+    font-weight: 400;
+    font-size: $font-xs;
+    padding: 15px 0;
+    color: $primary-grey;
+  }
+}

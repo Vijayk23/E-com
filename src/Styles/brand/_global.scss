@@ -1,0 +1,258 @@
+@charset 'utf-8';
+@use "sass:string";
+body,
+html {
+  @include sizing(
+    $ff: $font-regular,
+    $fs: $font-xsm,
+    $fw: normal,
+    $lh: normal,
+    $h: 100%
+  );
+  @include color($color: $secondary-black, $bg: $body-bg-color);
+  @include space($margin: 0, $letterspace: $letterSpacing);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-stroke: 0.0001em;
+  @-moz-document url-prefix() {
+    scrollbar-color: $secondary-grey $tertiary-grey;
+  }
+  @-moz-document url-prefix() {
+    scrollbar-width: thin;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $tertiary-grey;
+    border-radius: 0 0 5px 5px;
+  }
+  &::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    background-color: $primary-grey;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary-color;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    cursor: pointer;
+  }
+}
+ol,
+ul {
+  @include space($margin: 0, $padding: 0, $liststyle: none);
+}
+p {
+  margin: 0;
+}
+b,
+strong {
+  font-family: $font-medium;
+  font-weight: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  @include space($margin: 0);
+  color: $primary-black;
+}
+h1 {
+  @include sizing($fs: $font-lg);
+}
+h2 {
+  @include sizing($fs: $font-md);
+}
+h3 {
+  @include sizing($fs: $font-smd);
+}
+h4 {
+  @include sizing($fs: $font-sm);
+  //@include space($margin: 0 0 30px 0);
+  @include space($margin: 0 0 25px 0);
+}
+h5 {
+  @include sizing($fs: $font-xsm);
+}
+h6 {
+  @include sizing($fs: $font-xs);
+}
+th {
+  font-weight: normal;
+}
+.dflex {
+  display: flex;
+}
+.font-monospace {
+  font-family: monospace;
+}
+.cursor-default {
+  cursor: default;
+}
+.hide {
+  display: none !important;
+}
+.ellispis {
+  white-space: nowrap;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.css-scrollbar {
+  @extend %css-scrollbar;
+}
+.css-scrollbar-y {
+  @extend %css-scrollbar-y;
+}
+.no-border-top {
+  border-top: none !important;
+}
+.no-border-right {
+  border-right: none !important;
+}
+.no-border-bottom {
+  border-bottom: none !important;
+}
+.no-border-left {
+  border-left: none !important;
+}
+.height-100per {
+  height: 100% !important;
+}
+.link-underline {
+  text-decoration: underline !important;
+  color: $secondary-blue-color !important;
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+.link-underline-hover {
+  text-decoration: none !important;
+  color: $secondary-blue-color !important;
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+.link-underline-orange {
+  text-decoration: underline !important;
+  color: $primary-orange !important;
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+.link-orange {
+  text-decoration: none !important;
+  color: $primary-orange !important;
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+.transition {
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+.btl-5 {
+  border-top-left-radius: 5px;
+}
+.btr-5 {
+  border-top-right-radius: 5px;
+}
+.bbl-5 {
+  border-bottom-left-radius: 5px;
+}
+.bbr-5 {
+  border-bottom-right-radius: 5px;
+}
+
+// Bootstrap <Row> gutters
+.res-g-0 {
+  --bs-gutter-y: 0rem !important;
+  --bs-gutter-x: 0rem !important;
+}
+.res-gy-0 {
+  --bs-gutter-y: 0rem !important;
+}
+.res-gx-0 {
+  --bs-gutter-x: 0rem !important;
+}
+.res-g-1 {
+  --bs-gutter-y: 1.9rem !important;
+  --bs-gutter-x: 1.9rem !important;
+}
+.res-gy-1 {
+  --bs-gutter-y: 1.9rem !important;
+}
+.res-gx-1 {
+  --bs-gutter-x: 1.9rem !important;
+}
+.res-g-2 {
+  --bs-gutter-y: 3.8rem !important;
+  --bs-gutter-x: 3.8rem !important;
+}
+.res-gy-2 {
+  --bs-gutter-y: 3.8rem !important;
+}
+.res-gx-2 {
+  --bs-gutter-x: 3.8rem !important;
+}
+
+label,
+.lbl {
+  vertical-align: middle;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.justify-content-flex-end {
+  justify-content: flex-end !important;
+}
+.flex-right {
+  display: flex;
+  justify-content: flex-end !important;
+}
+.flex-center {
+  display: flex;
+  justify-content: center !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+.align-items-baseline {
+  align-items: baseline !important;
+}
+.space-evenly {
+  justify-content: space-evenly !important;
+}
+.primary-color {
+  color: $primary-color;
+}
+.gap10 {
+  gap: 10px !important;
+}
+.color-primary-black {
+  color: $primary-black !important;
+}
+.w-100 {
+  width: 100% !important;
+}
+.row {
+  margin: 0 !important;
+}
+.pr0 {
+  padding-right: 0 !important;
+}

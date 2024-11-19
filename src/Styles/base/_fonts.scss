@@ -1,0 +1,74 @@
+
+.font-medium {
+    #{$ff}: $font-medium;
+}
+.font-regular {
+    #{$ff}: $font-regular;
+}
+.font-semi-bold {
+    #{$ff}: $font-semi-bold;
+}
+.font-bold {
+    #{$ff}: $font-bold;
+}
+
+$list3: regular;
+$list4: medium;
+$list5: bold;
+$list6: semibold;
+
+@include font-face('#{$fontName}#{$list3}', '#{$fontFolder}#{$fontName}/#{$fontName}#{$list3}');
+@include font-face('#{$fontName}#{$list4}', '#{$fontFolder}#{$fontName}/#{$fontName}#{$list4}');
+@include font-face('#{$fontName}#{$list5}', '#{$fontFolder}#{$fontName}/#{$fontName}#{$list5}');
+@include font-face('#{$fontName}#{$list6}', '#{$fontFolder}#{$fontName}/#{$fontName}#{$list6}');
+
+// ::Kendo Font Size
+
+// Updated
+
+// Icons sizes
+.icon-xs,
+.icon-mini {
+    font-size: $icon-xs !important;
+} // 15px
+.icon-md {
+    font-size: $icon-md !important;
+} // 24px
+.icon-lg {
+    font-size: $icon-lg !important;
+} // 32px
+.icon-xl {
+    font-size: $icon-xl !important;
+} // 45px
+.icon-xxl {
+    font-size: $icon-xxl !important;
+} // 50px
+
+// Fonts sizes
+.font-xxs {
+    font-size: $font-xxs !important;
+} // 12px
+.font-xs {
+    font-size: $font-xs !important;
+} // 15px
+.font-xsm {
+    font-size: $font-xsm !important;
+} // 17px
+.font-sm {
+    font-size: $font-sm !important;
+} // 19px
+.font-smd {
+    font-size: $font-smd !important;
+} // 21px
+.font-md {
+    font-size: $font-md !important;
+} // 24px
+.font-lg {
+    font-size: $font-lg !important;
+} // 32px
+.font-xl {
+    font-size: $font-xl !important;
+} // 45px
+.font-xxl {
+    font-size: $font-xxl !important;
+} // 50px
